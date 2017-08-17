@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Cocktail.destroy_all
+Dose.destroy_all
+Ingredient.destroy_all
+
+
+cocktails = Cocktail.create([{ name: 'Cuba Libre' }, { name: 'Daiquiri' }, { name: 'Pina Colada' }])
+ingredients = Ingredient.create([{ name: 'Rum' }, { name: 'Vodka' }, { name: 'Tequila' }, { name: 'Coca Cola' }, { name: 'Lime Juice' }, { name: 'Water' }, { name: 'Orange Juice' }])
+
+# iterate through cocktails
+cocktails.each do |cocktail|
+
+    3.times do
+      dose = Dose.new(description: "#{rand(2..5)}cl")
+      dose.cocktail = cocktail
+      dose.ingredient = ingredients.sample
+      dose.save
+      dose.ingredient.save
+    end
+
+  cocktail.save
+end
+

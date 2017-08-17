@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>Add new ingredient</h3>
+
+      <%= simple_form_for(@dose) do |form| %>
+      <%= form.error_notification %>
+
+      <%= form.input :description, label: "Dose for Ingredient 1", placeholder: "Dose for Ingredient 1" %>
+
+      <%= form.input :ingredient, label: "Ingredient 2", collection: ["lemon","ice"], prompt: "Ingredient 2", selected: ["lemon"] %>
+
+      <%= form.button :submit %>
+
+      <% end %>
+
+
+    </div>
+
+  </div>
+
+</div>
