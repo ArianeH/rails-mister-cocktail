@@ -1,20 +1,35 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-4">
-      <h1 class="text-center">Cocktails</h1>
-      <% @cocktails.each do |cocktail| %>
-      <ul>
-        <h3><%= cocktail.name %></h3>
 
-        <p> <%= link_to "See details", cocktail_path(cocktail) %> </p>
+    <h1 class="text-center">Cocktails</h1>
 
-      </ul>
-      <% end %>
+    <% @cocktails.each do |cocktail| %>
 
-      <%= link_to "Add new cocktail", new_cocktail_path %>
+    <div class="col-xs-12 col-sm-4">
+
+      <% if cocktail.photo? %>
+      <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+      url('<%= cl_image_path cocktail.photo.path, height: 500, width: 400, crop: :fit %>')">
+      <div class="card-category"><h3><%= cocktail.name %></h3></div>
+      <p class="card-description"> <%= link_to "Click for details", cocktail_path(cocktail) %> </p>
+      <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
     </div>
 
-  </div>
+    <% else %>
+    <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= image_path 'default_2.jpg'%>)">
+      <div class="cocktail-name"><h3><%= cocktail.name %></h3></div>
+      <p class="card-description"> <%= link_to "Click for details", cocktail_path(cocktail) %> </p>
+      <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+    </div>
+    <% end %>
 
+
+
+  </div>
+  <% end %>
+
+  <%= link_to "Add new cocktail", new_cocktail_path %>
+
+</div>
 </div>

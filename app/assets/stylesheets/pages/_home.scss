@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+.small-img {
+  border-radius: 5%;
+  width: 100px;
+  height: 100px;
+}
+
+.list-cocktails {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
