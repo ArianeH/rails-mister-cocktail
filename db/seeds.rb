@@ -10,7 +10,7 @@ Dose.destroy_all
 Ingredient.destroy_all
 
 
-cocktails = Cocktail.create([{ name: 'Cuba Libre' }, { name: 'Daiquiri' }, { name: 'Pina Colada' }])
+cocktails = Cocktail.create([{ name: 'Cuba Libre' }, { name: 'Daiquiri' }, { name: 'Pina Colada' }, { name: 'Mai Tai'}, { name: 'Mojito'}])
 ingredients = Ingredient.create([{ name: 'Rum' }, { name: 'Vodka' }, { name: 'Tequila' }, { name: 'Coca Cola' }, { name: 'Lime Juice' }, { name: 'Water' }, { name: 'Orange Juice' }])
 
 # ingredients = ["Rum","Vodka","Tequila","Coca Cola","Lime Juice","Water","Orange Juice"]

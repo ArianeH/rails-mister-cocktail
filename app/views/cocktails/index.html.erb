@@ -1,8 +1,12 @@
 
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('');">
+  <div class="banner-content">
+    <h1>Cocktails</h1>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
-
-    <h1 class="text-center">Cocktails</h1>
 
     <% @cocktails.each do |cocktail| %>
 
@@ -10,26 +14,23 @@
 
       <% if cocktail.photo? %>
       <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-      url('<%= cl_image_path cocktail.photo.path, height: 500, width: 400, crop: :fit %>')">
+      url('<%= cl_image_path cocktail.photo.path%>')">
       <div class="card-category"><h3><%= cocktail.name %></h3></div>
       <p class="card-description"> <%= link_to "Click for details", cocktail_path(cocktail) %> </p>
       <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
     </div>
 
     <% else %>
-    <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= image_path 'default_2.jpg'%>)">
-      <div class="cocktail-name"><h3><%= cocktail.name %></h3></div>
+
+    <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path 'default_2.jpg'%>')">
+      <div class="card-category"><h3><%= cocktail.name %></h3></div>
       <p class="card-description"> <%= link_to "Click for details", cocktail_path(cocktail) %> </p>
       <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
     </div>
     <% end %>
 
-
-
   </div>
   <% end %>
-
-  <%= link_to "Add new cocktail", new_cocktail_path %>
 
 </div>
 </div>
