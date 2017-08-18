@@ -13,8 +13,7 @@ Ingredient.destroy_all
 cocktails = Cocktail.create([{ name: 'Cuba Libre' }, { name: 'Daiquiri' }, { name: 'Pina Colada' }, { name: 'Mai Tai'}, { name: 'Mojito'}])
 ingredients = Ingredient.create([{ name: 'Rum' }, { name: 'Vodka' }, { name: 'Tequila' }, { name: 'Coca Cola' }, { name: 'Lime Juice' }, { name: 'Water' }, { name: 'Orange Juice' }])
 
-
-
+num = 1
 
 cocktails.each do |cocktail|
 
@@ -25,6 +24,10 @@ cocktails.each do |cocktail|
       dose.save
       dose.ingredient.save
     end
+
+    cocktail.photo_url = "http://res.cloudinary.com/ariane/image/upload/v1503068708/#{num}.jpg"
+
+    num += 1
 
   cocktail.save
 end
