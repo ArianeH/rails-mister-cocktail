@@ -5,18 +5,11 @@
 
       <%= simple_form_for(@dose) do |form| %>
       <%= form.error_notification %>
-
       <%= form.input :description, label: "Dose for Ingredient 1", placeholder: "Dose for Ingredient 1" %>
-
       <%= form.input :ingredient, label: "Ingredient 2", collection: ["Rum","Vodka","Tequila","Coca Cola","Lime Juice","Water","Orange Juice"], prompt: "Ingredient 2", selected: ["lemon"] %>
-
       <%= form.button :submit %>
-
       <% end %>
 
-
     </div>
-
   </div>
-
 </div>
