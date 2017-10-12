@@ -2,20 +2,19 @@
 
   <h1><%= @cocktail.name %></h1>
 
-
   <div class="cocktail-details">
     <% if @cocktail.photo? %>
-    <%= cl_image_tag @cocktail.photo.path, width: 400, height: 300, crop: :fit %>
+      <%= cl_image_tag @cocktail.photo.path, width: 400, height: 300, crop: :fit %>
     <% end %>
 
     <div class="cocktail-ingredients">
       <h3>Ingredients</h3>
 
       <% @cocktail.doses.each do |dose| %>
-      <div>
-        <%= dose.description %> <%= dose.ingredient.name %>
-        <%= link_to "Delete", dose_path(dose), method: :delete %>
-      </div>
+        <div>
+          <%= dose.description %> <%= dose.ingredient.name %>
+          <%= link_to "Delete", dose_path(dose), method: :delete %>
+        </div>
       <% end %>
     </div>
 
@@ -25,7 +24,6 @@
   <br>
 
   <div class="buttons">
-
     <!-- modal -->
     <button type="button" class="btn btn-success btn-ingredient" data-toggle="modal" data-target=".add-ingredient">Add new ingredient</button>
 
