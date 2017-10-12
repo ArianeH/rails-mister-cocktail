@@ -1,22 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6">
+
       <h3>Add new cocktail</h3>
 
       <%= simple_form_for(@cocktail) do |form| %>
       <%= form.error_notification %>
-
       <%= form.input :name, label: "", placeholder: "Name of cocktail" %>
-
       <%= form.input :photo, as: :attachinary %>
-
       <%= form.button :submit %>
-
       <% end %>
 
-
     </div>
-
   </div>
-
 </div>
